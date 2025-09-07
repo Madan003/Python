@@ -45,3 +45,13 @@ print(b)
 b.reverse()
 
 print(b)
+
+#tuples
+t = (1,2,3,4,5)
+print(type((t)))
+
+#set
+s = set((1,2,3))
+print(type(s))
+print(s)
+
