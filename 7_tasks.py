@@ -1,5 +1,5 @@
 #task 2
-"""
+
 n = int(input("Enter a number: "))
 i = 1
 while i<=n:
@@ -9,7 +9,7 @@ while i<=n:
     if i<=n:
         print(i)
     i+=1
-"""
+
 #task 3 = bus ticket booking
 
 tickets_avl = 8
