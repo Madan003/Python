@@ -1,5 +1,5 @@
 #braek and continue and while
-"""
+
 is_failed = True
 i = 1
 
@@ -13,7 +13,7 @@ while is_failed :
     i=i+1
     if(i>100):
         break
-"""
+
 #counting n numbers
 i = 1
 sum = 0
