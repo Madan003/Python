@@ -1,6 +1,6 @@
 import random
 
-random_number = random.randint(1,100)
+random_number = random.randint(1,100) #inclusive
 attempts = 0
 while True:
     number = int(input("Guess the number: "))
