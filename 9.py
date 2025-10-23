@@ -27,3 +27,11 @@ def average(*n):
     return ave
 
 print(average(1,2,3,4,5,6,7,8,9,10))
+
+#recursion function to add a digits of a number
+def addition(n):
+    if n==0:
+        return 0
+    return (n%10) + addition(n // 10)
+
+print(addition(456))
