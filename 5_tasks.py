@@ -27,6 +27,7 @@ l = [10,20,30,40,50]
 
 print(l)
 print(type(l))
+print(l[::-1])
 
 t = tuple(l)
 

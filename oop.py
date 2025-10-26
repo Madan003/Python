@@ -52,3 +52,21 @@ e1.display()
 e2.display()
 e3.display()
 e4.display()
+
+class Car:
+
+    #attributes
+    def __init__(self,brand,model,price):
+        self.brand = brand
+        self.model = model
+        self.price = price
+
+    #method
+    def display_info(self):
+        print(f"Brand: {self.brand}, Model: {self.model}, Price: {self.price}")
+    
+car1 = Car("Fortuner",2024,4800000.00)
+car2 = Car("BMW M5 CS",2025,"2.5 cr")
+
+car1.display_info()
+car2.display_info()
