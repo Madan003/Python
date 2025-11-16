@@ -49,3 +49,18 @@ class Car(Vehicle):
 
 c = Car("BMW","2024",23000000)
 c.show_info()
+
+def numberOfMatches(n: int) -> int:
+    matches = 0
+    teams = 0
+    while True:
+        if n%2==0:
+            matches += n/2
+            teams = n/2
+        else:
+            matches += (n-1)/2
+            teams = (n-1)/2+1
+        if teams < 2:
+            break
+    return matches
+numberOfMatches(7)
