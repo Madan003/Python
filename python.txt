@@ -1,0 +1,7 @@
+file handling alli "logging" bagge google madbeku.
+    SOLID principles kalibeku
+    file alli iro content seach madoke agthailla need to sort out.
+    prime number problem !!!
+    how to take input of number in a same line space separated
+    contact book, mini project madbeku
+    
