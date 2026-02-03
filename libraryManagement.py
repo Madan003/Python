@@ -53,29 +53,11 @@ class User:
         self.__borrowedList.append([bookId, time])
 
     def returnBook(self, bookId):
-        for borrowedList in self.__borrowedList:
-            if borrowedList[0] == bookId:
-                borrowed = borrowedList[1]
-                fmt = "%d:%m:%Y %H:%M:%S"
-                borrowedTime = datetime.datetime.strptime(borrowed,fmt)
-                returnTime = datetime.datetime.now()
-                diff = returnTime - borrowedTime
-                seconds = diff.total_seconds()
-                hours = seconds/3600
-                bill = round(hours * 29,2)
-                print(f"Based on your borrowed time {diff} your bill is {bill}rupees")
-                print("Pleasse pay the bill and return book.")
-                amount = float(input("Enter your bill amount to pay: "))
-                if amount == bill:
-                    print("Bill Paid Successfully.")
-                    self.__borrowedList.remove(borrowedList)
-                    print("Book Returned Successfully. Thank you!")
-                    break
-                else:
-                    print("Please pay the bill then return!!!")
-                    break
-        else:
-            print("You didn't borrowed this book!, please check once.")
+        for borrowed in self.__borrowedList:
+            if borrowed[0] == bookId:
+                self.__borrowedList.remove(borrowed)
+                break
+        
 
 class Library:
     books = []
@@ -193,12 +175,36 @@ class Library:
                 book_id = int(input("Enter the book id you want to return: "))
                 for book in cls.books:
                     if book.getBookId() == book_id:
-                        return_time = datetime.datetime.now()
                         borrowedList = user.getBorrowedList()
-
-                        user.returnBook(book_id)
-                        book.markReturned()
-                        
+                        if len(borrowedList) != 0:
+                            for borrowed in borrowedList:
+                                if book_id in borrowed:
+                                    borrow = borrowed[1]
+                                    fmt = "%d:%m:%Y %H:%M:%S"
+                                    borrowedTime = datetime.datetime.strptime(borrow,fmt)
+                                    returnTime = datetime.datetime.now()
+                                    diff = returnTime - borrowedTime
+                                    seconds = diff.total_seconds()
+                                    hours = seconds/3600
+                                    bill = round(hours * 29,2)
+                                    print(f"Based on your borrowed time {diff} your bill is {bill}rupees")
+                                    print("Pleasse pay the bill and return book.")
+                                    amount = float(input("Enter your bill amount to pay: "))
+                                    if amount == bill:
+                                        print("Bill Paid Successfully.")
+                                        user.returnBook(book_id)
+                                        book.markReturned()
+                                        print("Book Returned Successfully. Thank you!")
+                                        break
+                                    else:
+                                        print("Please pay the bill then return!!!")
+                                        break
+                                else:
+                                    print("You didn't borrowed this book!, please check once.")
+                                    break
+                        else:
+                            print("You didn't borrowed this book!, please check once.")
+                            break
                         break
                 else:
                     print("Book not found!")
