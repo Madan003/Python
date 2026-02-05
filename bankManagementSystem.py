@@ -33,6 +33,8 @@ class Bank:
         acc_type = input("Enter Your Account Type( Savings/Current ): ")
         u = User(name, acc_no, acc_type)
         cls.user_list.append(u)
+        with open("bank.txt",'a') as file:
+            file.write(f"{name} {acc_no} {acc_type} {u.get_balance()}")
         print("Your Account Created Successfully.")
         print("Your Account details: ")
         u.show_details()

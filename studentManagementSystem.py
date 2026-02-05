@@ -111,6 +111,7 @@ class StudentManager:
     
     
 m = StudentManager()
+m.loadStudents()
 while True:
     print("---------***---------")
     print("1. Add Student")
@@ -126,4 +127,6 @@ while True:
     elif operation == 3: m.update_student()
     elif operation == 4: m.search_student()
     elif operation == 5: m.remove_student()
-    elif operation == 6: exit()
+    elif operation == 6: 
+        print("Thank You!")
+        break
