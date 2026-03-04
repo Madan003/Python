@@ -175,7 +175,12 @@ class Generate_Report:
                 s.add_marks()
                 cls.generate_report_card(s)
             else:
-                print("Student not found!, please enter correct USN!!!")
+                name = input("Enter Your name: ")
+                s = Student(name, usn, branch, sem, year)
+                cls.student_list.append(s)
+                print(f"Ohh {name} Welcome!")
+                s.add_marks()
+                cls.generate_report_card(s)
         except ValueError:
             print("Error!, Enter correct details.")
 

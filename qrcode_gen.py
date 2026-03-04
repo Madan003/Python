@@ -1,12 +1,6 @@
 import qrcode
 
-url = input("Enter the Url: ").strip()
-file_path = "qr_code.png"
+image = qrcode.make("https://google.com")
 
-qr = qrcode.QRCode()
-qr.add_data(url)
-
-img = qr.make_image()
-img.save(file_path)
-
+image.save("qr_code.png")
 print("QR code Generated Successfully!")
